@@ -1,0 +1,170 @@
+.registration {
+  &_body {
+    display: flex;
+    gap: 128px;
+    // flex-wrap: wrap;
+  }
+  &_form {
+    flex: 1 0 360px;
+    .caption {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      margin-bottom: 20px;
+      color: #222222;
+    }
+
+    .type_text {
+      display: block;
+      width: 100%;
+      padding: 13px 17px 13px 17px;
+      border: 1px solid #a4a4a4;
+      color: #b1b1b1;
+    }
+
+    .name {
+      margin-bottom: 31px;
+
+      .type_text:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+
+    .gender {
+      margin-bottom: 33px;
+
+      input[type="radio"] {
+        margin-right: 10px;
+      }
+
+      label {
+        margin-right: 20px;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 13px;
+      }
+    }
+
+    .login_details {
+      margin-bottom: 15px;
+
+      .type_text:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      .pass_hint {
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 16px;
+        color: #b1b1b1;
+        margin-bottom: 39px;
+      }
+    }
+
+    .reg_btn button {
+      background: $brandColor;
+      font-size: 14px;
+      line-height: 17px;
+      color: #ffffff;
+      width: 167px;
+      height: 50px;
+      margin-bottom: 96px;
+      border: none;
+    }
+
+    .reg_btn button:hover {
+      cursor: pointer;
+    }
+  }
+  &_info {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+
+    &_caption,
+    &_text {
+      //   text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    &_list .list_item::before {
+      content: url(../img/point.svg);
+      padding-right: 22px;
+    }
+
+    .list_item:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .center {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .registration {
+    &_body {
+      gap: 22px;
+    }
+
+    &_info {
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  .subscribe {
+    background-position: -350px;
+    &_wrapper {
+      flex-direction: column;
+      justify-content: normal !important;
+    }
+
+    &__avatar {
+      margin: 64px 0px 48px 0px;
+    }
+
+    &__form {
+      margin-bottom: 148px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .for-catalog {
+    justify-content: center;
+  }
+
+  .registration {
+    &_body {
+      flex-wrap: wrap;
+      gap: 0px;
+    }
+
+    &_form {
+      margin-bottom: 39px;
+    }
+
+    &_form .reg_btn button {
+      margin-bottom: 0;
+    }
+
+    &_info {
+      margin-bottom: 96px;
+    }
+  }
+
+  .footer {
+    flex-direction: column;
+    height: 100%;
+    padding: 43px 0 24px 0;
+    gap: 25px;
+
+    .footer__copyright {
+      order: 3;
+    }
+  }
+}

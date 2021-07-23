@@ -1,0 +1,242 @@
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+summary {
+  list-style-type: none;
+}
+
+.for-catalog {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.promo__nav__list {
+  display: flex;
+
+  .nav__item:not(:last-child)::after {
+    content: "/";
+    padding: 0px 3px 0px 3px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #636363;
+  }
+
+  .nav__link {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #636363;
+  }
+  .nav__item:hover .nav__link {
+    color: $brandColor;
+    font-weight: bold;
+  }
+}
+
+.fetured__nav {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 64px;
+
+  .filter_block {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    // margin: 0px 304px 0px 15px;
+    color: #000000;
+    position: relative;
+    flex: 0 0 360px;
+    padding-left: 16px;
+    cursor: pointer;
+  }
+
+  .filter_block p span {
+    text-align: center;
+    padding-left: 11px;
+    font-size: 14px;
+  }
+
+  .filter_block:hover .accordion {
+    display: block;
+    background: #ffffff;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+  }
+
+  .accordion {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: 2;
+    padding-left: 16px;
+    width: 100%;
+    display: none;
+
+    .accordion-button::after {
+      background: transparent;
+    }
+
+    .accordion-button {
+      border-left: 5px solid #ef5b70;
+      font-size: 14px;
+      line-height: 17px;
+      color: #ef5b70;
+      padding: 10px 0 10px 11px;
+      box-shadow: none;
+      background: none;
+    }
+
+    .accordion-body {
+      font-size: 14px;
+      line-height: 17px;
+      color: #6f6e6e;
+      font-weight: normal;
+    }
+
+    .accordion-button:focus {
+      z-index: 3;
+      border-color: #ebebeb;
+      border-left-color: #ef5b70;
+      outline: 0;
+    }
+  }
+
+  .accordion-item {
+    .accordion-body {
+      .accordion-body-item:not(:last-child) {
+        margin-bottom: 11px;
+      }
+    }
+  }
+
+  .sorting_block {
+    display: flex;
+
+    .sorting_block_list {
+      font-size: 14px;
+      line-height: 17px;
+      color: #6f6e6e;
+      display: flex;
+      flex: 0 0 296px;
+      justify-content: space-between;
+    }
+
+    .sorting_block_list svg {
+      margin-left: 10px;
+    }
+
+    .sorting__size {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+    }
+    .sorting__size__type {
+      margin-right: 9px;
+    }
+  }
+}
+
+.sorting_item_details {
+  position: relative;
+}
+
+// .sorting_item_details[open]:not(:focus) {
+//   display: none;
+// }
+
+.sorting_item_size {
+  z-index: 2;
+  position: absolute;
+  left: -10px;
+  top: 25px;
+  padding: 10px 0px 10px 0px;
+  width: 79px;
+  background: #ffffff;
+  box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+
+  .size-item:not(:last-child) {
+    margin-bottom: 6px;
+  }
+}
+
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+  color: black;
+  font-weight: bold;
+  border: 1px 0px 1px 1px;
+}
+
+.page-item:first-child {
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  border-left: 1px solid #ebebeb;
+}
+
+.page-item:last-child {
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  border-right: 1px solid #ebebeb;
+}
+
+.page-item:not(:first-child),
+.page-item:not(:last-child) {
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.page-link {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #c4c4c4;
+  border: none;
+}
+
+.page-link:hover {
+  background: none;
+  border-color: none;
+  color: #f16d7f !important;
+}
+
+.page-link:focus {
+  box-shadow: none;
+  background: none;
+  color: #f16d7f;
+}
+
+@media (max-width: 768px) {
+  .fetured__nav .filter_block {
+    flex: 0 0 auto;
+  }
+
+  .privileges {
+    height: 100%;
+    flex-direction: column;
+    gap: 48px;
+    padding: 48px 0;
+
+    &__item {
+      max-width: 360px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .promo {
+    margin-bottom: 24px;
+  }
+
+  .fetured__nav {
+    margin-bottom: 40px;
+
+    .sorting_block .sorting_block_list {
+      font-size: 12px;
+      line-height: 14px;
+      flex: 0 0 auto;
+      gap: 20px;
+    }
+  }
+}
